@@ -3,9 +3,9 @@ messageList = new Mongo.Collection("messages");
 if (Meteor.isClient) {
 
   function blink() {
-      $('.blink').fadeOut(500).fadeIn(500);
+      $('.blink').fadeOut(300).fadeIn(300);
   }
-  setInterval(blink, 1000);
+  setInterval(blink, 600);
 
   var curMessageId = 0;
   function createNewEmptyMessage() {

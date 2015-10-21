@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+
+#userImage {
+  height : 80px;
+  float: right;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+tr.standby {
+  color: #ff0000;
+}
+
+span.submitted {
+  visibility: hidden;
+}

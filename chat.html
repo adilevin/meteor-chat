@@ -1,0 +1,61 @@
+<head>
+  <title>chat</title>
+</head>
+
+<body>
+  {{>main}}
+</body>
+
+<template name="main">
+    <div class="well">
+      <h1>Simple chat application</h1>
+      {{> loginButtons}}
+    </div>
+    {{#if userDefined}}
+      {{> inputForm}}
+    {{/if}}
+    {{> messages}}
+</template>
+
+<template name="messages">
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-12">
+        <table class="table table-striped">
+          <tbody>
+            {{#each messages}}
+              <tr class={{state}}><td>{{formattedDate}} <b>{{from}}</b>:       {{text}}<span class="blink {{state}}"> |</span></td></tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="inputForm">
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<form class="form-horizontal" role="form">
+  				<div class="form-group">
+
+  					<label for="inputText" class="col-sm-2 control-label">
+  						Message
+  					</label>
+  					<div class="col-sm-10">
+  						<input type="text" class="form-control" id="inputText" />
+  					</div>
+  				</div>
+  				<div class="form-group">
+  					<div class="col-sm-offset-2 col-sm-10">
+  						<button type="submit" class="btn btn-default">
+  							Send
+  						</button>
+  					</div>
+  				</div>
+  			</form>
+  		</div>
+  	</div>
+  </div>
+</template>
